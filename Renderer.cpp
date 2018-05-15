@@ -72,7 +72,7 @@ void DrawCall(Mesh * MeshToDraw)
 
 VertexToFragment VertexShader(VertexDATA in)
 {
-	//TRS Matrix ¹İ¿µÇØ¼­ º¯È¯µÈ position µ¹·ÁÁÖ±â
+	//TRS Matrix ë°˜ì˜í•´ì„œ ë³€í™˜ëœ position ëŒë ¤ì£¼ê¸°
 	VertexToFragment v2f;
 
 	static float offsetX = 0.0f;
@@ -94,7 +94,7 @@ VertexToFragment VertexShader(VertexDATA in)
 
 ULONG FragmentShader(VertexToFragment in, float s, float t)
 {
-	//Texture¿¡¼­ »ö»ó »©¿À±â
+	//Textureì—ì„œ ìƒ‰ìƒ ë¹¼ì˜¤ê¸°
 	if (g_Texture->IsLoaded())
 	{
 		return g_Texture->TextureSample(in.uv, s, t);
@@ -105,14 +105,15 @@ ULONG FragmentShader(VertexToFragment in, float s, float t)
 
 void InitFrame(void)
 {
-	// Buffer Clear
-	SetColor(32, 128, 255);
-	Clear();
+	
+	
 }
 
 void UpdateFrame(void)
 {
-	InitFrame();
+	// Buffer Clear
+	SetColor(32, 128, 255);
+	Clear();
 
 	// Draw
 	//UV
@@ -164,7 +165,7 @@ void UpdateFrame(void)
 	m2->setIndices();
 
 
-	//·¹ÀÌ¾î ÁöÁ¤
+	//ë ˆì´ì–´ ì§€ì •
 	int LayerCount = LAYERSIZE;
 	Mesh *meshes = new Mesh[LayerCount]();
 
